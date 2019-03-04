@@ -5,7 +5,7 @@ import './App.css';
 // import './overwrite-liveramp.sass';
 // import './overwrite-antd.sass';
 
-import Portal from '../../common/component/Portal';
+import Portal from '../../common/Portal';
 
 // locale data
 const locales = {
@@ -20,8 +20,8 @@ class App extends Component {
     }
 
     componentDidMount() {
-        const cookieLocale = this.getCookie("org.springframework.web.servlet.i18n.CookieLocaleResolver.LOCALE");
-        let language = cookieLocale ? cookieLocale.replace('_', '-') : "en-US";
+        var locale = (navigator.language || navigator.browserLanguage).slice(0, 2)
+        let language = locale ? `${locale}-CN` : "en-US";
         if (!locales[language]) { //if language file not existed
             language = "en-US";
         }
@@ -39,14 +39,6 @@ class App extends Component {
         }).then(() => {
             this.setState({ initDone: true });
         });
-    }
-
-    getCookie = (name) => {
-        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-        if (arr === document.cookie.match(reg))
-            return unescape(arr[2]);
-        else
-            return null;
     }
 
     render() {

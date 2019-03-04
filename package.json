@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && node ./server/server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "dev:fe": "react-scripts start",
     "dev:be": "node ./server/server.js"
   },
   "devDependencies": {

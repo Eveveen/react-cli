@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import intl from 'react-intl-universal';
 import Style from './index.module.sass';
 
 export default class Index extends Component {
@@ -22,7 +23,7 @@ export default class Index extends Component {
     render() {
         const { data } = this.state;
         return <div className={Style.root}>
-            {!!data ? data : 'wait'}
+            {intl.get('name')}{!!data ? data : 'wait'}
         </div>
     }
 }
