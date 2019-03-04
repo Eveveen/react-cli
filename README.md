@@ -12,7 +12,13 @@
 2. 国际化文件位于 src/locale 中，根据浏览器当前语言进行自适应，如果是中文则显示中文，其它语言则显示英文，当然，也可以自己添加其它语言，只需在 src/component/App/App.js 中添加判断即可
 3. create-react-app 支持使用 css-module，如果是 sass 文件，只需要命名中间加一个 .module 即可，如 index.module.sass
 
-
+### 目录结构
+`server/routes` 存放 be 的路由
+`src/common/Portal` 存放 fe 路由
+`src/component` 存放前端组件
+`src/config` 存放 be 的配置
+`src/locale` 存放国际化文件
+`src/index` 主入口文件
 
 ## 注意 1
 You may create subdirectories inside src. For faster rebuilds, only files inside src are processed by Webpack. You need to put any JS and CSS files inside src, otherwise Webpack won’t see them.

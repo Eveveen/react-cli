@@ -20,8 +20,9 @@ class App extends Component {
     }
 
     componentDidMount() {
-        var locale = (navigator.language || navigator.browserLanguage).slice(0, 2)
-        let language = locale ? `${locale}-CN` : "en-US";
+        var locale = (navigator.language || navigator.browserLanguage);
+        let language = locale.indexOf('zh') >= 0 ? `zh-CN` : "en-US";
+
         if (!locales[language]) { //if language file not existed
             language = "en-US";
         }
