@@ -3,7 +3,7 @@ let log4js = require('log4js');
 let logger = log4js.getLogger();
 let express = require('express');
 let app = express();
-const config = require('../config/config.js');
+const config = require('../src/config/config.js');
 
 let tmpRouter = require("./routes/tmp");
 

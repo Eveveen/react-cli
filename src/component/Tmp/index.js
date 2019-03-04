@@ -1,5 +1,6 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
+import Style from './index.module.sass';
 
 export default class Index extends Component {
     constructor(props) {
@@ -20,6 +21,8 @@ export default class Index extends Component {
 
     render() {
         const { data } = this.state;
-        return !!data ? data : 'wait'
+        return <div className={Style.root}>
+            {!!data ? data : 'wait'}
+        </div>
     }
 }
