@@ -1,21 +1,25 @@
-import React, { Component } from 'react';
-// import intl from 'react-intl-universal';
-// import update from 'immutability-helper';
-// import { SERVICE_URL } from '../../../../config/config';
-// import { httpRequestGet, httpRequestPost, createErrorMsg } from '../../../common/tools/utils';
-// import { _ } from 'underscore';
-
-
-// import Style from './index.module.sass';
-
+import { Component } from 'react';
+import axios from 'axios';
 
 export default class Index extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: ''
+        }
+    }
+
+    componentDidMount() {
+        axios.get(`http://localhost:8083/tmp/getCreativeSets`)
+            .then((response) => {
+                this.setState({ data: response.data })
+            }).catch((err) => {
+                console.log("err", err)
+            })
+    }
 
     render() {
-        return (
-            <div>
-                aa
-            </div>
-        );
+        const { data } = this.state;
+        return !!data ? data : 'wait'
     }
 }

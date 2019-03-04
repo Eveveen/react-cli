@@ -7,14 +7,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev:fe": "node ./scripts/start.js"
+    "dev:be": "node ./server/server.js"
   },
   "devDependencies": {
+    "express": "^4.16.4",
+    "log4js": "^4.0.2",
     "react-dev-utils": "^7.0.3",
     "react-intl-universal": "^1.15.5",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "underscore": "^1.9.1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5"
