@@ -11,7 +11,7 @@ export default class Index extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8083/tmp/getCreativeSets`)
+        axios.get(`http://localhost:8080/tmp/getCreativeSets`)
             .then((response) => {
                 this.setState({ data: response.data })
             }).catch((err) => {
