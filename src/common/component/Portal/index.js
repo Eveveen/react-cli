@@ -8,7 +8,7 @@ export default class Portal extends Component {
         return (
             <Router>
                 <Switch>
-                    <Redirect exact from="/" to="/" />
+                    <Redirect exact from="/" to="/tmp" />
                     <Route path="/tmp" component={Tmp} />
                     {/* <Route render={() => (<NoMatch />)} /> */}
                 </Switch>
